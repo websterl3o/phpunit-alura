@@ -5,8 +5,8 @@ namespace Tests\Services;
 use Alura\Leilao\Model\Lance;
 use Alura\Leilao\Model\Leilao;
 use Alura\Leilao\Model\Usuario;
-use PHPUnit\Framework\TestCase;
 use Alura\Leilao\Services\Avaliador;
+use PHPUnit\Framework\TestCase;
 
 class AvaliadorTest extends TestCase
 {
@@ -16,10 +16,10 @@ class AvaliadorTest extends TestCase
     {
         $leilao = new Leilao('Fiat 147 0KM');
 
-        $maria = new Usuario('Maria');
-        $joao = new Usuario('João');
+        $maria   = new Usuario('Maria');
+        $joao    = new Usuario('João');
         $joaquim = new Usuario('Joaquim');
-        $carlos = new Usuario('Carlos');
+        $carlos  = new Usuario('Carlos');
 
         $leilao->recebeLance(new Lance($joao, 2500));
         $leilao->recebeLance(new Lance($joaquim, 3000));
@@ -33,10 +33,10 @@ class AvaliadorTest extends TestCase
     {
         $leilao = new Leilao('Fiat 147 0KM');
 
-        $maria = new Usuario('Maria');
-        $joao = new Usuario('João');
+        $maria   = new Usuario('Maria');
+        $joao    = new Usuario('João');
         $joaquim = new Usuario('Joaquim');
-        $carlos = new Usuario('Carlos');
+        $carlos  = new Usuario('Carlos');
 
         $leilao->recebeLance(new Lance($maria, 20000));
         $leilao->recebeLance(new Lance($carlos, 3500));
@@ -50,10 +50,10 @@ class AvaliadorTest extends TestCase
     {
         $leilao = new Leilao('Fiat 147 0KM');
 
-        $maria = new Usuario('Maria');
-        $joao = new Usuario('João');
+        $maria   = new Usuario('Maria');
+        $joao    = new Usuario('João');
         $joaquim = new Usuario('Joaquim');
-        $carlos = new Usuario('Carlos');
+        $carlos  = new Usuario('Carlos');
 
         $leilao->recebeLance(new Lance($carlos, 3500));
         $leilao->recebeLance(new Lance($joao, 2500));
@@ -66,9 +66,9 @@ class AvaliadorTest extends TestCase
     public function entregaLeiloes(): array
     {
         return [
-            'ordem-crescente' => [$this->leilaoEmOrdemCrescente()],
+            'ordem-crescente'   => [$this->leilaoEmOrdemCrescente()],
             'ordem-decrescente' => [$this->leilaoEmOrdemDecrescente()],
-            'ordem-aleatoria' => [$this->leilaoEmOrdemAleatoria()]
+            'ordem-aleatoria'   => [$this->leilaoEmOrdemAleatoria()],
         ];
     }
 

@@ -12,7 +12,7 @@ class Lance
     public function __construct(Usuario $usuario, float $valor)
     {
         $this->usuario = $usuario;
-        $this->valor = $valor;
+        $this->valor   = $valor;
     }
 
     public function getUsuario(): Usuario

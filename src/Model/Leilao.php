@@ -12,7 +12,7 @@ class Leilao
     public function __construct(string $descricao)
     {
         $this->descricao = $descricao;
-        $this->lances = [];
+        $this->lances    = [];
     }
 
     public function recebeLance(Lance $lance)
