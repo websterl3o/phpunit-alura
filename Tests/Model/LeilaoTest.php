@@ -45,4 +45,16 @@ class LeilaoTest extends TestCase
             self::assertEquals($valorLance, $leilao->getLances()[$i]->getValor());
         }
     }
+
+    public function testLeilaoNaoDeveReceberLancesRepetidos()
+    {
+        $leilao = new Leilao('Corsa 0KM');
+        $joao   = new Usuario('João');
+
+        $leilao->recebeLance(new Lance($joao, 2000));
+        $leilao->recebeLance(new Lance($joao, 3000));
+
+        self::assertCount(1, $leilao->getLances());
+        self::assertEquals(2000, $leilao->getLances()[0]->getValor());
+    }
 }
