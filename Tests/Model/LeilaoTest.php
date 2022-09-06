@@ -46,7 +46,7 @@ class LeilaoTest extends TestCase
         }
     }
 
-    public function testLeilaoNaoDeveReceberLancesRepetidos()
+    public function testLeilaoNaoDeveReceberLancesSeguidos()
     {
         $leilao = new Leilao('Corsa 0KM');
         $joao   = new Usuario('João');
