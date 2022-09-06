@@ -12,6 +12,10 @@ class Avaliador
 
     public function avalia(Leilao $leilao)
     {
+        if ($leilao->estaFinalizado()) {
+            throw new \DomainException('Leilão já finalizado');
+        }
+
         $lances = $leilao->getLances();
 
         if ($lances === []) {

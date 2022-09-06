@@ -8,6 +8,7 @@ class Leilao
     private $lances;
     /** @var string */
     private $descricao;
+    private $finalizado = false;
 
     public function __construct(string $descricao)
     {
@@ -56,5 +57,15 @@ class Leilao
     public function getLances(): array
     {
         return $this->lances;
+    }
+
+    public function finaliza()
+    {
+        $this->finalizado = true;
+    }
+
+    public function estaFinalizado(): bool
+    {
+        return $this->finalizado;
     }
 }
