@@ -121,4 +121,14 @@ class AvaliadorTest extends TestCase
         self::assertEquals(3500, $maioresLances[1]->getValor());
         self::assertEquals(3000, $maioresLances[2]->getValor());
     }
+
+    public function testNaoAvaliaLeilaoSemLances()
+    {
+        $leilao = new Leilao('Fusca 0KM');
+
+        $this->expectException(\DomainException::class);
+        $this->expectExceptionMessage('Não é possível avaliar um leilão sem lances');
+
+        $this->leiloeiro->avalia($leilao);
+    }
 }
